@@ -1,4 +1,4 @@
-Link API: https://documenter.getpostman.com/view/23054100/2sAXqv61r7
+Link API: <...>
 
 ## Authentication Functionalities
 
