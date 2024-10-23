@@ -14,4 +14,4 @@ router.getRouter().post("/clear", CartController.clearCart);
 router.getRouter().patch("/increase", CartController.increaseItemInCart);
 router.getRouter().patch("/decrease", CartController.decreaseItemFromCart);
 
-router.getRouter().get("/checkout", CartController.checkout);
+// router.getRouter().get("/checkout", CartController.checkout);

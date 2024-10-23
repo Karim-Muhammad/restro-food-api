@@ -72,7 +72,7 @@ class AuthValidations extends Validations {
   }
 
   public isEmailTaken(email: string) {
-    return UserModel.findByEmail(email).then((document) => {
+    return UserModel.find({ email }).then((document) => {
       console.log(document);
       if (document) throw new Error("This email is invalid");
       return true;

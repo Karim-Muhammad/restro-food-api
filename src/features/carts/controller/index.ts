@@ -57,7 +57,7 @@ class CartController {
       const { productId, color } = req.body;
       const { user } = req;
 
-      let cart = await this.cartRepository.readOne({ user: user.id });
+      const cart = await this.cartRepository.readOne({ user: user.id });
       if (!cart) {
         return next(
           ErrorAPI.notFound(
@@ -126,7 +126,7 @@ class CartController {
 
     // TODO: Load the product from the database to get the price
     if (productIndex === -1) {
-      cart.products.push({ product: productId, quantity: 1, color, price });
+      cart.products.push({ product: productId, quantity: 1, color, price: 0 }); // add the product to the cart
     } else {
       cart.products[productIndex].quantity += 1; // decrease the quantity of the product
     }
@@ -166,7 +166,7 @@ class CartController {
     await cart.save();
   });
 
-  checkout = catchAsync(async (req: Request, res: Response) => {});
+  // checkout = catchAsync(async (req: Request, res: Response) => {});
 }
 
 export default new CartController();
